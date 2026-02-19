@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Backup files
+*.backup
+backups/
+final-backup-20260218/
+ui-final-backup/
+ui-final-backup-20260218_010322/
+ui-homepage-backup/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS generated files
+ehthumbs.db
+Desktop.ini

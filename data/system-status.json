@@ -1,0 +1,28 @@
+{
+  "dataCleared": true,
+  "clearedAt": "2026-02-18T16:22:30.785Z",
+  "totalCategories": 2154,
+  "oldMethodData": {
+    "backedUp": true,
+    "backupFile": "complete-backup-before-clear-1771431750723.json",
+    "itemsCount": 2154
+  },
+  "newMethod": {
+    "enabled": true,
+    "name": "真实商品评选系统",
+    "requiresRealData": true,
+    "automationReady": false,
+    "nextSteps": [
+      "配置真实商品数据源",
+      "设置自动化采集程序",
+      "定义评选维度和标准",
+      "启动自动化评价流程"
+    ]
+  },
+  "recommendations": [
+    "建议先采集至少100个品类的真实商品数据",
+    "建立品牌库和产品数据库",
+    "配置自动化质量验证",
+    "设置定期数据更新机制"
+  ]
+}
