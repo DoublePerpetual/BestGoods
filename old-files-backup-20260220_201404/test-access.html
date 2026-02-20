@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BestGoods 访问测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        .error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        .link {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #3b82f6;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s;
+        }
+        .link:hover {
+            background-color: #e5e7eb;
+            border-color: #9ca3af;
+        }
+        .info {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .test-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .test-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>BestGoods 访问测试</h1>
+    
+    <div class="info">
+        <strong>服务器状态:</strong> 正在运行 (端口 3076)<br>
+        <strong>启动时间:</strong> 2026-02-20 19:08<br>
+        <strong>数据库:</strong> 49个一级分类 · 3,270个二级分类 · 195,651个三级分类
+    </div>
+    
+    <h2>测试链接</h2>
+    
+    <a href="http://localhost:3076/" class="link" target="_blank">
+        🔗 测试首页 (http://localhost:3076/)
+    </a>
+    
+    <a href="http://localhost:3076/category/%E4%B8%AA%E6%8A%A4%E5%81%A5%E5%BA%B7/%E5%89%83%E9%A1%BB%E7%94%A8%E5%93%81/%E4%B8%80%E6%AC%A1%E6%80%A7%E5%89%83%E9%A1%BB%E5%88%80" class="link" target="_blank">
+        🔗 测试详情页 (一次性剃须刀)
+    </a>
+    
+    <a href="http://localhost:3076/health" class="link" target="_blank">
+        🔗 测试健康检查 (http://localhost:3076/health)
+    </a>
+    
+    <h2>快速测试</h2>
+    <button class="test-btn" onclick="testHomepage()">测试首页访问</button>
+    <button class="test-btn" onclick="testDetailPage()">测试详情页访问</button>
+    <button class="test-btn" onclick="testHealth()">测试健康检查</button>
+    
+    <div id="test-result"></div>
+    
+    <h2>预期结果</h2>
+    <div class="info">
+        <strong>首页应该显示:</strong>
+        <ul>
+            <li>✅ 49个一级分类全部展示（无分页）</li>
+            <li>✅ 统计数据：49个一级分类 · 3,270个二级分类 · 195,651个品类</li>
+            <li>✅ 搜索功能正常</li>
+            <li>✅ 一级目录按钮无图标（简洁设计）</li>
+        </ul>
+        
+        <strong>详情页应该显示:</strong>
+        <ul>
+            <li>✅ 最佳评选结果表格（3x3）</li>
+            <li>✅ 详细评选分析</li>
+            <li>✅ 点赞点踩功能（初始值0）</li>
+            <li>✅ 评论功能（长方形textarea，可连续发表）</li>
+        </ul>
+    </div>
+    
+    <script>
+        function testHomepage() {
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<div class="status">测试中...</div>';
+            
+            fetch('http://localhost:3076/')
+                .then(response => {
+                    if (response.ok) {
+                        resultDiv.innerHTML = '<div class="status success">✅ 首页访问成功 (HTTP 200)</div>';
+                    } else {
+                        resultDiv.innerHTML = `<div class="status error">❌ 首页访问失败 (HTTP ${response.status})</div>`;
+                    }
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<div class="status error">❌ 首页访问失败: ${error.message}</div>`;
+                });
+        }
+        
+        function testDetailPage() {
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<div class="status">测试中...</div>';
+            
+            fetch('http://localhost:3076/category/%E4%B8%AA%E6%8A%A4%E5%81%A5%E5%BA%B7/%E5%89%83%E9%A1%BB%E7%94%A8%E5%93%81/%E4%B8%80%E6%AC%A1%E6%80%A7%E5%89%83%E9%A1%BB%E5%88%80')
+                .then(response => {
+                    if (response.ok) {
+                        resultDiv.innerHTML = '<div class="status success">✅ 详情页访问成功 (HTTP 200)</div>';
+                    } else {
+                        resultDiv.innerHTML = `<div class="status error">❌ 详情页访问失败 (HTTP ${response.status})</div>`;
+                    }
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<div class="status error">❌ 详情页访问失败: ${error.message}</div>`;
+                });
+        }
+        
+        function testHealth() {
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<div class="status">测试中...</div>';
+            
+            fetch('http://localhost:3076/health')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'healthy') {
+                        resultDiv.innerHTML = '<div class="status success">✅ 健康检查通过: 服务器运行正常</div>';
+                    } else {
+                        resultDiv.innerHTML = `<div class="status error">❌ 健康检查失败: ${data.status}</div>`;
+                    }
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<div class="status error">❌ 健康检查失败: ${error.message}</div>`;
+                });
+        }
+        
+        // 自动测试
+        window.onload = function() {
+            setTimeout(testHomepage, 1000);
+        };
+    </script>
+</body>
+</html>

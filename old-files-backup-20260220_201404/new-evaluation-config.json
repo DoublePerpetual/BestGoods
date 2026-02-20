@@ -1,0 +1,24 @@
+{
+  "method": "real-product-evaluation",
+  "description": "基于真实商品数据的全新评选方法",
+  "requirements": [
+    "使用真实商家品牌和具体产品型号",
+    "避免泛指或模拟数据",
+    "全方位评估选择最佳公司/品牌/商品",
+    "设置合理的价格区间和评选维度",
+    "24小时不间断录入数据的自动化程序"
+  ],
+  "evaluationDimensions": [
+    "品牌知名度",
+    "产品质量",
+    "价格合理性",
+    "用户评价",
+    "市场占有率",
+    "技术创新",
+    "售后服务",
+    "环保认证"
+  ],
+  "priceRangeStrategy": "根据实际消费者情况设置",
+  "automationEnabled": true,
+  "createdAt": "2026-02-18T16:21:55.000Z"
+}

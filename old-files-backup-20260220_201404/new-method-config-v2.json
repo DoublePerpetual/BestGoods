@@ -1,0 +1,29 @@
+{
+  "project": "BestGoods新方法评选系统",
+  "version": "2.0.0",
+  "totalCategories": 2194,
+  "clearedAt": "2026-02-18T16:40:37.509Z",
+  "backupFile": "complete-clear-backup-1771432837452.json",
+  "requirements": {
+    "realProducts": true,
+    "realBrands": true,
+    "specificModels": true,
+    "qualityValidation": true,
+    "costControl": true
+  },
+  "processingStrategy": {
+    "batchSize": 50,
+    "concurrentWorkers": 5,
+    "dailyBudget": 500,
+    "priorityOrder": [
+      "个护健康",
+      "其他品类"
+    ]
+  },
+  "expectedOutcomes": {
+    "processingSpeed": "20-50品类/小时",
+    "completionTime": "2-5天",
+    "totalCost": "约500-1000元",
+    "dataQuality": "置信度>85%"
+  }
+}
