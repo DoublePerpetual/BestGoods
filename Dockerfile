@@ -23,12 +23,12 @@ COPY . .
 # 创建数据目录
 RUN mkdir -p data
 
-# 暴露端口 - Zeabur标准端口8080
-EXPOSE 8080
+# 暴露端口 - 标准端口3000
+EXPOSE 3000
 
 # 健康检查 - 使用 curl 替代 wget，curl 在 Alpine 中更常见
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:8080/health || exit 1
+  CMD curl -f http://localhost:3000/health || exit 1
 
 # 启动命令 - 使用正确的文件名
 CMD ["node", "bestgoods-complete-website.js"]
