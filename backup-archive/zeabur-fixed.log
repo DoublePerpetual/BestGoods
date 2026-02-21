@@ -1,0 +1,39 @@
+🔧 初始化数据库配置...
+当前工作目录: /Users/surferboy/.openclaw/workspace/bestgoods-github
+文件目录: /Users/surferboy/.openclaw/workspace/bestgoods-github
+
+============================================================
+🚀 BestGoods Zeabur修复版服务器启动
+============================================================
+
+🎯 初始化BestGoods服务器...
+
+🚀 初始化数据库连接...
+🔍 查找数据库文件...
+  检查路径: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+  ✅ 找到数据库文件: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+     文件大小: 61.94 MB
+     修改时间: 20/02/2026, 9:08:54 pm
+🔗 连接数据库: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+✅ 数据库连接成功
+✅ 数据库测试查询成功
+📊 获取统计数据...
+✅ 服务器初始化完成
+📈 分类统计: 49个一级分类, 3270个二级分类, 195651个三级分类
+📦 产品数量: 4580个
+
+✅ 服务器启动成功!
+🌐 访问地址:
+   • 首页: http://localhost:3076/
+   • 健康检查: http://localhost:3076/health
+   • 数据库测试: http://localhost:3076/api/db-test
+
+📊 服务器信息:
+   端口: 3076
+   数据库: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+   环境: development
+   进程ID: 64764
+============================================================
+
+🛑 收到终止信号，清理资源...
+✅ 数据库连接已关闭

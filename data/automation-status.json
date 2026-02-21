@@ -1,0 +1,21 @@
+{
+  "totalCategories": 244808,
+  "completedCategories": 509,
+  "bestProductsCount": 509,
+  "lastUpdated": "2026-02-19T10:56:58.213Z",
+  "automationProgress": {
+    "startedAt": "2026-02-19T10:56:18.679Z",
+    "lastProcessed": "2026-02-19T10:56:58.213Z",
+    "processingSpeed": 0,
+    "estimatedCompletion": null
+  },
+  "totalCost": 0.020392,
+  "qualityMetrics": {
+    "totalValidations": 1,
+    "passedValidations": 0,
+    "failedValidations": 1,
+    "passRate": "0.00%",
+    "qualityIssues": 1,
+    "lastValidation": "2026-02-19T10:56:58.213Z"
+  }
+}

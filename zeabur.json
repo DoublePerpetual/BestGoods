@@ -1,0 +1,31 @@
+{
+  "name": "bestgoods",
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "npm install --production",
+    "startCommand": "node bestgoods-complete-website.js"
+  },
+  "deploy": {
+    "restartPolicy": "always",
+    "resources": {
+      "cpu": 0.5,
+      "memory": 512
+    },
+    "healthCheck": {
+      "path": "/health",
+      "port": 3076,
+      "initialDelaySeconds": 10,
+      "periodSeconds": 30
+    },
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "3076"
+    }
+  },
+  "domains": [
+    {
+      "name": "bestgoods",
+      "type": "subdomain"
+    }
+  ]
+}

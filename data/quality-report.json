@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-02-19T09:29:54.620Z",
+  "summary": {
+    "totalCategories": 20,
+    "passed": 20,
+    "failed": 0,
+    "passRate": 100
+  },
+  "details": [
+    {
+      "category": "个护健康 > 剃须用品 > 剃须皂碗",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 剃须皂碗"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 剃须膏",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 剃须膏"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 剃须镜",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 剃须镜"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 发剪",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 发剪"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 喷水壶",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 喷水壶"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 女士剃毛刀",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 女士剃毛刀"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 女士剃毛膏",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 女士剃毛膏"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 安全剃须刀",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 安全剃须刀"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 家用理发推剪",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 家用理发推剪"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 往复式剃须刀",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 往复式剃须刀"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 手动剃须刀",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 手动剃须刀"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 手动剃须刀替换刀片",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 手动剃须刀替换刀片"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 打薄剪",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 打薄剪"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 旋转式剃须刀",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 旋转式剃须刀"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 比基尼线修剪器",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 比基尼线修剪器"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 热敷剃须毛巾",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 热敷剃须毛巾"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 理发围布",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 理发围布"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 理发推剪润滑油",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 理发推剪润滑油"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 理发推剪清洁刷",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 理发推剪清洁刷"
+    },
+    {
+      "category": "个护健康 > 剃须用品 > 理发推剪限位梳",
+      "isValid": true,
+      "issues": [],
+      "categoryName": "个护健康 > 剃须用品 > 理发推剪限位梳"
+    }
+  ],
+  "stats": {
+    "totalValidations": 80,
+    "passedValidations": 80,
+    "failedValidations": 0,
+    "qualityIssues": []
+  }
+}

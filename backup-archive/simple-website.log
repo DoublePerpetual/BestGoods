@@ -1,0 +1,8 @@
+连接数据库: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+数据库连接成功
+🚀 BestGoods简化版网站运行在 http://localhost:3076
+📊 健康检查: http://localhost:3076/health
+📦 API接口: http://localhost:3076/api/products
+💾 数据库: /Users/surferboy/.openclaw/workspace/bestgoods-github/data/bestgoods.db
+查询错误: SQLITE_CORRUPT: database disk image is malformed
+查询错误: SQLITE_CORRUPT: database disk image is malformed

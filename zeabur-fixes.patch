@@ -1,0 +1,110 @@
+# Zeabur生产修复补丁
+# 应用于 bestgoods-complete-website.js
+# 修复5大问题，同时保持UI设计不变
+
+## 修复1: 异步/await处理完整
+### 问题: initializeServer()函数中的数据库查询使用了await，但在加载品类树时，内层循环中的异步操作没有正确等待
+### 修复: 确保所有异步操作都正确等待
+
+## 修复2: 错误处理不完善
+### 问题: query()函数中的错误处理只是简单地reject，没有记录详细的错误信息
+### 修复: 添加详细的错误日志和输入验证
+
+## 修复3: 内存泄漏风险
+### 问题: memoryStorage.comments数组会无限增长，没有大小限制
+### 修复: 添加评论数量限制和自动清理机制
+
+## 修复4: 数据库连接未正确关闭
+### 问题: 服务器启动时初始化数据库连接，但在服务器关闭时没有正确关闭数据库连接
+### 修复: 添加优雅关闭处理
+
+## 修复5: 缺少CORS和安全头配置
+### 问题: 没有配置CORS和安全相关的HTTP头
+### 修复: 添加完整的中间件配置
+
+# 具体修复步骤：
+
+1. 在文件开头添加以下中间件配置：
+```
+// CORS配置
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+// 安全头配置
+app.use((req, res, next) => {
+  res.header('X-Content-Type-Options', 'nosniff');
+  res.header('X-Frame-Options', 'DENY');
+  res.header('X-XSS-Protection', '1; mode=block');
+  res.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  next();
+});
+
+// 请求日志中间件
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} - ${res.statusCode} (${duration}ms)`);
+  });
+  next();
+});
+```
+
+2. 修改query函数，添加更好的错误处理：
+```
+function query(sql, params = []) {
+  return new Promise((resolve, reject) => {
+    if (!db) {
+      const error = new Error('数据库连接未初始化');
+      console.error('❌ 查询错误:', error.message);
+      return reject(error);
+    }
+    
+    db.all(sql, params, (err, rows) => {
+      if (err) {
+        const errorMsg = `SQL查询失败: ${err.message}\nSQL: ${sql}\n参数: ${JSON.stringify(params)}`;
+        console.error('❌ 查询错误:', errorMsg);
+        reject(new Error(errorMsg));
+      } else {
+        resolve(rows || []);
+      }
+    });
+  });
+}
+```
+
+3. 修改memoryStorage，添加评论限制：
+```
+const memoryStorage = {
+  votes: {},
+  comments: [],
+  MAX_COMMENTS: 1000,
+  
+  addComment(comment) {
+    this.comments.push(comment);
+    if (this.comments.length > this.MAX_COMMENTS) {
+      this.comments.shift();
+      console.log(`⚠️ 评论数量超过限制，已删除最旧的评论。当前评论数: ${this.comments.length}`);
+    }
+  },
+  
+  getComments(limit = 100) {
+    return this.comments.slice(-limit);
+  }
+};
+```
+
+4. 在initializeServer函数中，确保所有异步操作都正确等待
+5. 在startServer函数中添加优雅关闭处理
+
+# 重要提醒：
+- 所有修复都不修改UI设计
+- 保持原有功能不变
+- 只修复Zeabur指出的生产环境问题

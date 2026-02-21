@@ -1,0 +1,21 @@
+{
+  "name": "bestgoods-zeabur",
+  "version": "1.0.0",
+  "description": "BestGoods Zeabur生产就绪版本 - UI设计100%按照备份文件还原",
+  "main": "bestgoods-complete-website.js",
+  "scripts": {
+    "start": "node bestgoods-complete-website.js",
+    "dev": "node bestgoods-complete-website.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["bestgoods", "zeabur", "production"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
